@@ -21,8 +21,13 @@ func logica(myMap map[string]string) {
 		userInp := userInput()
 		switch {
 		case userInp == 1:
+			if len(myMap) == 0 {
+				fmt.Println("Пока нет закладок")
+			}
 			flag = 1
-			fmt.Println(myMap)
+			for key, value := range myMap {
+				fmt.Println(key, ":", value)
+			}
 		case userInp == 2:
 			key := ""
 			value := ""
@@ -36,8 +41,8 @@ func logica(myMap map[string]string) {
 		case userInp == 3:
 			key := ""
 			flag = 3
-			for key := range myMap {
-				fmt.Println(key)
+			for key, value := range myMap {
+				fmt.Println(key, ":", value)
 			}
 			fmt.Print("Введите ключ для удаления:")
 			fmt.Scan(&key)

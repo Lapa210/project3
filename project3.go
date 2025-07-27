@@ -36,6 +36,9 @@ func logica(myMap map[string]string) {
 		case userInp == 3:
 			key := ""
 			flag = 3
+			for key := range myMap {
+				fmt.Println(key)
+			}
 			fmt.Print("Введите ключ для удаления:")
 			fmt.Scan(&key)
 			delete(myMap, key)
